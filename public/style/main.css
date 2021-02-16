@@ -128,6 +128,11 @@ summary {
 }
 
 /*# sourceMappingURL=/sm/3c8a72540b353e8066a63580fff1b7fbff35925789e51ac52bb6794c81144ab3.map */
+aside {
+  background: #131415;
+  width: calc(100vw/3);
+}
+
 .main-nav ul {
   margin: 0;
   padding-inline-start: 0px;
@@ -147,7 +152,7 @@ summary {
 }
 
 .main-nav-item {
-  width: 30%;
+  width: 100%;
   height: 100px;
 }
 
@@ -166,16 +171,16 @@ summary {
 
 .nav-label {
   transform: rotateX(0deg);
-  background-color: #1f1e23;
+  background-color: #131415;
   font-size: 2rem;
-  color: #ff8b19;
+  color: #c11861;
 }
 
 .subnav {
   transform: rotateX(-90deg);
   /*left: 80px;*/
-  background-color: #ff8b19;
-  color: #1f1e23;
+  background-color: #c11861;
+  color: #131415;
   display: flex;
   flex-wrap: wrap;
 }
