@@ -7,3 +7,7 @@
 .anime div {
   display: flex;
 }
+
+.none {
+  display: none;
+}
