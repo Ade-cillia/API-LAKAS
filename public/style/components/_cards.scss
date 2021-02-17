@@ -1,0 +1,119 @@
+@import "../helpers/variables";
+
+.card {
+  margin: 25px;
+  background: $bg-main;
+  color: $text;
+  border-radius: 10px;
+  display: flex;
+
+
+  .illustration {
+    box-sizing: content-box;
+    border-radius: 10px 0 0 10px;
+  }
+
+  p, h2, h3 {
+    margin : 0;
+    padding : 0
+  }
+
+  .label {
+    color: $text-featured;
+    font-weight:600;
+    font-size:1.2em;
+  }
+  .content {
+    padding: 15px;
+    width: 325px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;;
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content:space-between;
+      margin: 5px 0;
+
+      .title {
+        p {
+          font-style: italic;
+          color: $yellow-500 ;
+        }
+        p.completed {
+          color: $green-500 !important;
+        }
+        p.upcoming {
+          color: $blue-500;
+        }
+
+        h2 {
+        color: $main;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.7em;
+        }
+      }
+
+      .note {
+        font-weight: 600;
+        font-size: 1.2em;
+
+        .high {
+          color: $green-500;
+        }
+        .medium {
+          color: $yellow-500;
+        }
+        .low {
+          color: $red-500;
+        }
+        .note-max {
+          font-size: 0.7em;
+          font-weight: 300;
+        }
+      }
+    }
+
+    .row {
+      margin-top: 20px;
+
+      p {
+        margin-top: 5px;
+      }
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $text-featured;
+      font-weight: 600;
+
+      .rating {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        span {
+          font-size:0.9em;
+          color: $text-alternate;
+          font-style: italic;
+          font-weight:300;
+        }
+      }
+    }
+  }
+
+  @media (max-width:600px) {
+    flex-direction: column;
+
+    .illustration {
+      box-sizing: content-box;
+      border-radius: 10px 10px 0 0;
+    }
+  }
+
+}

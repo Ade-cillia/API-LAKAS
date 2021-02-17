@@ -8,11 +8,11 @@ icon.addEventListener("click", function() {
   menu.classList.toggle('aside-visible');
 });
 
-window.onscroll = () => {
-  if (window.pageYOffset > sticky) {
-    menu.classList.add('aside-fixed');
-  }
-  else {
-    menu.classList.remove('aside-fixed');
-  }
-}
+// window.onscroll = () => {
+//   if (window.pageYOffset > sticky) {
+//     menu.classList.add('aside-fixed');
+//   }
+//   else {
+//     menu.classList.remove('aside-fixed');
+//   }
+// }

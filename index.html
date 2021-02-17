@@ -16,11 +16,11 @@
       <img src="public/content/banner.jpg" alt="">
       <i id="burger-menu" class="far fa-bars"></i>
     </header>
-    <main>
-      <aside>
+    <main class="website-main">
+      <aside class="aside-menu">
         <div class="search">
           <div>
-            <input type="text">
+            <input type="text" placeholder="rechercher">
             <i class="far fa-search"></i>
           </div>
         </div>
@@ -65,18 +65,53 @@
           </ul>
         </nav>
       </aside>
-      <div style="height:200vh">
-        <div class="mainContent none">
-          <div class="anime">
-            <div>
-              <h1>Titre :&nbsp</h1>
-              <h1 id="title"></h1>
-            </div>
-            <div id="image_url">
+      <div class="main">
 
+<!--        <div class="mainContent">-->
+<!--          <div class="anime">-->
+<!--            <div>-->
+<!--              <h1>Titre :&nbsp</h1>-->
+<!--              <h1 id="title"></h1>-->
+<!--            </div>-->
+<!--            <div id="image_url">-->
+
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+        <article class="card">
+          <img class="illustration" src="public/content/example.jpg" alt="">
+          <div class="content">
+            <div>
+              <header>
+                <div class="title">
+                  <h2>Titre</h2>
+                  <p class="upcoming">Etat</p>
+                </div>
+                <div class="note">
+                  <span class="high">8</span><span class="note-max">/10</span>
+                </div>
+              </header>
+              <div class="row">
+                <h3 class="label">Label</h3>
+                <p class="text-content">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </p>
+              </div>
+              <div class="row">
+                <h3 class="label">Label</h3>
+                <p class="text-content">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </p>
+              </div>
             </div>
+            <footer>
+              <p class="support">TV</p>
+              <p class="rating"><span>Rating</span>17+</p>
+              <p class="number">25ep</p>
+            </footer>
           </div>
-        </div>
+        </article>
       </div>
     </main>
     <footer>

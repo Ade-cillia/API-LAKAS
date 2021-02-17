@@ -1,17 +1,15 @@
 @import "../helpers/variables";
 
-aside {
+.aside-menu {
   z-index: 5;
   height:100vh;
   background: $bg-main;
-  width: calc(100vw/3);
-
-  min-width: 350px;
+  width: 400px;
 
   flex-direction: column;
   border-right: 4px solid $main;
 
-  position: sticky;
+  position: absolute;
 
   @media (min-width:1000px) {
     display: flex !important;
