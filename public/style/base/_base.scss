@@ -4,3 +4,7 @@ body {
     background: $bg-alternate;
     overflow-x: hidden;
 }
+
+.hidden {
+    display: none !important;
+}

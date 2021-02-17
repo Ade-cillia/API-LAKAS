@@ -9,9 +9,15 @@
 
     <link rel="stylesheet" href="public/style/main.css">
 
-    <script src="./script/animejs.js" defer></script>
+<!--    <script src="./script/animejs.js" defer></script>-->
   </head>
   <body>
+    <div class="modal hidden">
+      <div class="modal-bg"></div>
+      <div class="modal-content">
+        <iframe width="720" height="405" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
     <header class="banner">
       <img src="public/content/banner.jpg" alt="">
       <i id="burger-menu" class="far fa-bars"></i>
@@ -19,8 +25,13 @@
     <main class="website-main">
       <aside class="aside-menu">
         <div class="search">
-          <div>
-            <input type="text" placeholder="rechercher">
+          <div id="search-box">
+            <select name="type" id="search-type">
+              <option value="anime">Animé</option>
+              <option value="manga">Manga</option>
+              <option value="character">Perso.</option>
+            </select>
+            <input type="text" placeholder="Rechercher">
             <i class="far fa-search"></i>
           </div>
         </div>
@@ -67,18 +78,33 @@
       </aside>
       <div class="main">
 
-<!--        <div class="mainContent">-->
-<!--          <div class="anime">-->
-<!--            <div>-->
-<!--              <h1>Titre :&nbsp</h1>-->
-<!--              <h1 id="title"></h1>-->
-<!--            </div>-->
-<!--            <div id="image_url">-->
-
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-
+        <article id="producers" class="card">
+          <div class="content">
+            <div>
+              <header>
+                <div class="title">
+                  <h2 id="name">Nom</h2>
+                </div>
+              </header>
+              <div class="row">
+                <h3 class="label">Créations</h3>
+                <ul class="text-content long-list">
+                  <li>Animé 1</li>
+                  <li>Animé 2</li>
+                  <li>Animé 1</li>
+                  <li>Animé 2</li>
+                  <li>Animé 1</li>
+                  <li>Animé 2</li>
+                </ul>
+              </div>
+            </div>
+            <footer>
+              <p class="support">TV</p>
+              <p class="rating"><span>Rating</span>17+</p>
+              <p class="number">25ep</p>
+            </footer>
+          </div>
+        </article>
         <article class="card">
           <img class="illustration" src="public/content/example.jpg" alt="">
           <div class="content">
@@ -118,5 +144,8 @@
 
     </footer>
     <script src="script/menu.js"></script>
+<!--    <script src="script/modal.js"></script>-->
+    <script src="script/search.js"></script>
+    <script src="script/showContent.js"></script>
   </body>
 </html>
