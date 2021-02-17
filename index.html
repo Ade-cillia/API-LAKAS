@@ -6,7 +6,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <script src="./script/animejs.js" defer></script>
+    <script src="./script/anime.js" defer></script>
+    <script src="./script/fonction.js" defer></script>
     <link rel="stylesheet" href="public/style/main.css">
     <script src="script/Producer.js"></script>
   </head>
@@ -15,7 +16,7 @@
       <div class="title"></div>
     </header>
     <main>
-      <aside>
+      <aside class="aside-menu">
         <div class="search">
           <input type="text">
           <i class="far fa-search"></i>
@@ -26,8 +27,11 @@
               <div class="box">
                 <div class="face nav-label">Animés</div>
                 <ul class="face subnav">
-                  <li class="subnav-item">Item 1</li>
-                  <li class="subnav-item">Item 2</li>
+                  <li class="subnav-item" data-genre="genre14">Horreur</li>
+                  <li class="subnav-item" data-genre="genre2">Aventure</li>
+                  <li class="subnav-item" data-genre="genre1">Action</li>
+                  <li class="subnav-item" data-genre="genre12">Le H word</li>
+                  <li class="subnav-item" data-genre="genre22">Romance</li>
                 </ul>
               </div>
             </li>
@@ -62,16 +66,73 @@
         </nav>
       </aside>
       <div class="mainContent ">
-        <div class="anime none">
-          <div class="anime-block">
-            <div class="animeLeftPart">
-              <div id="image_url"></div>
-              <div>
-                <h1>Titre :&nbsp</h1>
-                <h1 id="title"></h1>
+        <div class="anime "> 
+          <div id="genre1" class="allAnime-block none"> <!-- display none-->
+            <div class="anime-block">
+              <div class="animeLeftPart">
+                <div id="image_url"></div>
+                <div>
+                  <h1>Titre:&nbsp</h1>
+                  <h1 id="title"></h1>
+                </div>
+              </div>
+              <div class="animeRightPart">
+                <div>
+                  <p>Type :&nbsp</p>
+                  <p id="type"></p>
+                </div>
+                <div>
+                  <p>Genre:&nbsp</p>
+                  <p id="genres"></p>
+                </div>
+                <div>
+                  <p>Nombre d'épisode:&nbsp</p>
+                  <p id="episodes"></p>
+                </div>
+                <div>
+                  <p>synopsis:&nbsp</p>
+                  <p id="synopsis"></p>
+                </div>
+                <div class="trailer" data-trailer="1">
+                  <p data-trailer="1">Trailer</p>
+                </div>
               </div>
             </div>
-          </div>
+
+            <div class="anime-block">
+              <div class="animeLeftPart">
+                <div id="image_url"></div>
+                <div>
+                  <h1>Titre:&nbsp</h1>
+                  <h1 id="title"></h1>
+                </div>
+              </div>
+              <div class="animeRightPart">
+                <div>
+                  <p>Type :&nbsp</p>
+                  <p id="type"></p>
+                </div>
+                <div>
+                  <p>Genre:&nbsp</p>
+                  <p id="genres"></p>
+                </div>
+                <div>
+                  <p>Nombre d'épisode:&nbsp</p>
+                  <p id="episodes"></p>
+                </div>
+                <div>
+                  <p>synopsis:&nbsp</p>
+                  <p id="synopsis"></p>
+                </div>
+                <div class="trailer">
+                  <p>Trailer</p>
+                </div>
+              </div>
+            </div>
+        </div>
+          <aside class="modal none" data-video="true" >
+            <iframe class="trailerVideo" src="https://www.youtube.com/embed/qig4KOK2R2g?enablejsapi=1&wmode=opaque&autoplay=1"  width=50% frameborder="0" allow="autoplay ; fullscreen" allowfullscreen></iframe> 
+          </aside>
         </div>
       </div>
     </main>
