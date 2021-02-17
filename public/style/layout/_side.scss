@@ -1,19 +1,36 @@
 @import "../helpers/variables";
 
 aside {
+  z-index: 5;
   height:100vh;
   background: $bg-main;
   width: calc(100vw/3);
 
   min-width: 350px;
-  display: flex;
+
   flex-direction: column;
   border-right: 4px solid $main;
 
   position: sticky;
 
-  @media (max-width:100px) {
-    width: 800px;
-    min-width: unset;
+  @media (min-width:1000px) {
+    display: flex !important;
   }
+
+  @media (max-width:1000px) {
+    display: none;
+    width: 100vw;
+    min-width: unset;
+    position: fixed;
+    top: 0;
+  }
+}
+
+.aside-visible {
+  display: flex;
+}
+
+.aside-fixed {
+  position: fixed;
+  top: 0;
 }
