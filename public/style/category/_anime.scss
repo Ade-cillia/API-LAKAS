@@ -1,13 +1,28 @@
 .mainContent {
     width: calc(200vw/3);
-    height: 60%;
+    height: 100%;
+
+}
+.anime{
     border: 2px solid black;
 }
-  
-.anime div {
-    display: flex;
+.anime-block{
+    margin-left: 5%;
+    width: 30%;
+    height: 20%;
+    border: 2px solid black;
+    div{
+        div{
+            display: flex;
+        }
+       
+    }
+    .animeLeftPart{
+        width: 50%;
+        background: rebeccapurple;
+    }
+    h1{
+        font-size: 10%;
+    }
 }
 
-.none{
-    display: none;
-}
