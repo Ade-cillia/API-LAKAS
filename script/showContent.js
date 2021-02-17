@@ -1,96 +1,192 @@
 class Card {
-  constructor() {
+  /*
+  ANIME :
+    Titre
+    Image
+    Etat
+    Note
+    Genre
+    Synopsis
+    type
+    rating
+    Nbr d'episode
 
+  Manga
+    Nom
+    Image
+    score
+    Description
+
+  Character
+    Nom
+    Image
+    origine
+    description
+
+  Producer
+    nom
+   */
+
+  cardNode = null;
+  cardIllustration = null;
+  cardHeader = null;
+  cardRows = [];
+  cardFooter = null;
+
+  constructor(title, id, picture = null, note = null, rows = [], rating = null,
+              type = null, episode = null) {
+
+
+    this.title = title;
+    this.id = id;
+    this.picture = picture;
+    this.note = note;
+    this.rows = rows;
+    this.type = type;
+    this.rating = rating;
+    this.episode = episode;
+
+    if (picture) {
+      this.addIllustration(picture)
+    }
+
+    this.addheader(title, note)
+
+    for (let row of rows) {
+      this.addRow(row[0], row[1])
+    }
+
+    this.addFooter(type, rating, episode)
+
+    let temp = document.createElement('article')
+    temp.classList.add('card');
+    this.cardNode = temp;
   }
 
-  static createCard(){
-    let article = document.createElement('article')
-    article.classList.add('card')
-
+  addIllustration(link) {
     let illustration = document.createElement('img')
-    illustration.src = '#';
+    illustration.src = 'link';
     illustration.classList.add('illustration')
-    article.appendChild(illustration)
+    this.cardIllustration = illustration;
+  }
 
-    let content = document.createElement('div')
-    content.classList.add('content')
-
-    let div = document.createElement('div')
+  addheader(title, note = null) {
     let header = document.createElement('header')
 
     let titleDiv = document.createElement('div')
     titleDiv.classList.add('title')
 
-    let h2 = document.createElement('h2');
-    h2.innerText = 'Titre'
-    let state = document.createElement('p')
-    state.innerText = 'Etat'
+    let h2 = document.createElement('h2')
+    h2.innerText = title
     titleDiv.appendChild(h2)
-    titleDiv.appendChild(state)
-
-    let noteDiv = document.createElement('p')
-    noteDiv.classList.add('note')
-    let noteNbr = document.createElement('span')
-    noteNbr.innerText = '8'
-    let noteTotal = document.createElement('span')
-    noteTotal.innerText = '/10'
-    noteTotal.classList.add('note-max')
-    noteDiv.appendChild(noteNbr)
-    noteDiv.appendChild(noteTotal)
-
     header.appendChild(titleDiv)
-    header.appendChild(noteDiv)
-    div.appendChild(header)
 
-    function createRow(label, content, long = false) {
-      let row = document.createElement('div')
-      row.classList.add('row')
+    if(note) {
+      let noteDiv = document.createElement('p')
+      noteDiv.classList.add('note')
+      let noteNbr = document.createElement('span')
+      noteNbr.innerText = note
+      if (note >= 8) {
+        noteNbr.classList.add('high')
+      } else if (note <= 3) {
+        noteNbr.classList.add('low')
+      } else {
+        noteNbr.classList.add('medium')
+      }
 
-      let title = document.createElement('h3')
-      title.classList.add('label')
-      title.innerText = 'label'
-
-      let p = document.createElement('p')
-      p.classList.add('text-content')
-      if (long) {p.classList.add('long-list')}
-      p.innerText = 'content'
-
-      row.appendChild(title)
-      row.appendChild(p)
-
-      return row;
-
+      let noteTotal = document.createElement('span')
+      noteTotal.innerText = '/10'
+      noteTotal.classList.add('note-max')
+      noteDiv.appendChild(noteNbr)
+      noteDiv.appendChild(noteTotal)
+      header.appendChild(noteDiv)
     }
 
-    div.appendChild(createRow('Titre', 'Contenu lorem ipsum'))
+    this.cardHeader = header
+  }
+
+  addRow(label, content, long = false) {
+    let row = document.createElement('div')
+    row.classList.add('row')
+
+    let title = document.createElement('h3')
+    title.classList.add('label')
+    title.innerText = label
+
+    let p = document.createElement('p')
+    p.classList.add('text-content')
+    if (long) {p.classList.add('long-list')}
+    p.innerText = content
+
+    row.appendChild(title)
+    row.appendChild(p)
+
+    this.cardRows.push(row)
+
+  }
+
+  addFooter(support, rating, episodesNbr) {
+    let footer = document.createElement('footer')
+    let supportVar = document.createElement('p')
+    supportVar.classList.add('support')
+    supportVar.innerText = support
+
+    let ratingVar = document.createElement('p')
+    ratingVar.classList.add('rating')
+    if (rating) {
+      ratingVar.innerText = '18+'
+    } else {
+      ratingVar.innerText = 'Tout public'
+    }
+
+    let ratingSpan = document.createElement('span')
+    ratingSpan.innerText = 'rating'
+    ratingVar.prepend(ratingSpan)
+
+    let numberVar = document.createElement('p')
+    numberVar.classList.add('number')
+    numberVar.innerText = episodesNbr + 'ep'
+
+    footer.appendChild(supportVar)
+    footer.appendChild(ratingVar)
+    footer.appendChild(numberVar)
+
+    this.cardFooter = footer;
+
+  }
+
+  generateCard(){
+
+    let article = document.createElement('article')
+    article.classList.add('card');
+
+    let content = document.createElement('div')
+    content.classList.add('content')
+
+    if (this.cardIllustration != null) {
+      article.appendChild(this.cardIllustration)
+    } else {
+      content.classList.add('large-content')
+    }
+
+    let div = document.createElement('div')
+    div.appendChild(this.cardHeader)
+    for (let row of this.cardRows) {
+      div.appendChild(row)
+    }
 
     content.appendChild(div)
 
-    let footer = document.createElement('footer')
-    let support = document.createElement('p')
-    support.classList.add('support')
-    support.innerText = 'TV'
-
-    let rating = document.createElement('p')
-    rating.classList.add('rating')
-    rating.innerText = '17+'
-    let ratingSpan = document.createElement('span')
-    ratingSpan.innerText = 'rating'
-    rating.prepend(ratingSpan)
-
-    let number = document.createElement('p')
-    number.classList.add('number')
-    number.innerText = '25ep'
-
-    footer.appendChild(support)
-    footer.appendChild(rating)
-    footer.appendChild(number)
-
-    content.appendChild(footer)
+    if (this.cardFooter != null) {
+      content.appendChild(this.cardFooter)
+    }
 
     article.appendChild(content)
 
     return article
-
   }
 }
+
+
+let test = new Card('Mon anime', 12, null, 2, [['Genre', 'les genres de mon anime', false],['Description', 'lorem ipsum lorem lorem ipsum', false]], true, 'TV', 22)
+// document.querySelector('.main').appendChild(test.generateCard())

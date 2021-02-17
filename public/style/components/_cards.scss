@@ -23,6 +23,11 @@
     font-weight:600;
     font-size:1.2em;
   }
+
+  .large-content {
+    width: 550px !important;
+  }
+
   .content {
     padding: 15px;
     width: 325px;
@@ -80,7 +85,7 @@
       margin-top: 20px;
 
       .long-list {
-        max-height: 50px;
+        max-height: 100px;
         overflow-y: auto;
       }
 
@@ -90,6 +95,7 @@
     }
 
     footer {
+      margin-top: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
