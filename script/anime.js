@@ -1,9 +1,9 @@
-let id = 1;
+let id = 12;
 let allGenres = "";
 let modal = document.querySelector(".modal");
  
 
-
+/*
 document.querySelector('.anime').addEventListener('click', (el) => {
     el = el.target;
     if(el.dataset.trailer){
@@ -17,15 +17,14 @@ document.querySelector('.anime').addEventListener('click', (el) => {
         });
     }
 });
+*/
 document.querySelector('.aside-menu').addEventListener('click', (el) => {
     el = el.target;
     if(el.dataset.genre){
         console.log('nnan');
-
-        document.querySelector(`.allAnime-block`).classList.add('none') 
         
-
         if(document.querySelector(`#${el.dataset.genre}`) === null){
+            document.querySelector('.main').appendChild(Card.createCard());
             showAnime();
         }else{
             document.querySelector(`#${el.dataset.genre}`).classList.remove('none') 
@@ -34,10 +33,32 @@ document.querySelector('.aside-menu').addEventListener('click', (el) => {
 });
 
 function showAnime(){
-    fetch(`https://api.jikan.moe/v3/anime/${id}`).then((response) => {
+    fetch(`https://api.jikan.moe/v3/genre/anime/${id}/1`).then((response) => {
         return response.json();
-    }).then((anime) =>{
+    }).then((category) =>{
+        anime = category.anime; 
         console.log(anime);
+        var animeArray;
+        for (i = 0; i < 10; i++) {
+            animeArray = 
+                {
+                    i : 
+                    {
+                        'id' : anime[i].mal_id,
+                        'title' : anime[i].title,
+                        'genres' : anime[i].genres,
+                        'score' : anime[i].score,
+                        'synopsis' : anime[i].synopsis,
+                        'type' : anime[i].type,
+                        'episodes' : anime[i].episodes,
+                        'kids' : anime[i].kids,
+                        'r18' : anime[i].r18,
+                        'image_url' : anime[i].image_url
+                    }
+                }
+        }
+        debugger;
+        console.log(animeArrays)
         let imageDiv = document.querySelector('#image_url');
         
         let image = document.createElement('img');

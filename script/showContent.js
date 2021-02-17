@@ -2,7 +2,6 @@ class Card {
   constructor() {
 
   }
-
   static createCard(){
     let article = document.createElement('article')
     article.classList.add('card')
