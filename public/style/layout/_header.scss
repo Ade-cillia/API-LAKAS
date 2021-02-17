@@ -1,0 +1,10 @@
+@import "../helpers/variables";
+
+.banner {
+  width: 100vw;
+  border-bottom: 2px solid $main;
+
+  img {
+  width: 100%;
+  }
+}

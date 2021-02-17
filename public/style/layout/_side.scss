@@ -1,6 +1,14 @@
 @import "../helpers/variables";
 
 aside {
+  height:100vh;
   background: $bg-main;
   width: calc(100vw/3);
+
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  border-right: 4px solid $main;
+
+  position: sticky;
 }

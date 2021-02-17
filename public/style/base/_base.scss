@@ -1,3 +1,6 @@
-.test {
-    color: red;
+@import "../helpers/variables";
+
+body {
+    background: $bg-alternate;
+    overflow-x: hidden;
 }
