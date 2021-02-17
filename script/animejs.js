@@ -1,5 +1,5 @@
-let id = 1;
-fetch(`https://api.jikan.moe/v3/anime/${id}`).then((response) => {
+let id_anime = 1;
+fetch(`https://api.jikan.moe/v3/anime/${id_anime}`).then((response) => {
     return response.json();
 }).then((anime) =>{
     console.log(anime);
