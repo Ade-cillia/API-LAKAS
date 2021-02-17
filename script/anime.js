@@ -21,7 +21,7 @@ document.querySelector('.anime').addEventListener('click', (el) => {
 document.querySelector('.aside-menu').addEventListener('click', (el) => {
     el = el.target;
     if(el.dataset.genre){
-        console.log('nnan');
+        document.querySelector('.main').innerHTML = ''
         preparAnime(el.dataset.genre);
      
     }
