@@ -1,5 +1,10 @@
 @import "../helpers/variables";
 
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background: #38393b}
+::-webkit-scrollbar-thumb{background:$main;border-radius:10px}
+::-webkit-scrollbar-thumb:hover{background:#e94f23}
+
 body {
     background: $bg-alternate;
     overflow-x: hidden;
