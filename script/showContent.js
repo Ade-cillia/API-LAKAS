@@ -189,8 +189,7 @@ class Card {
   static create(title, id, picture = null, note = null, rows = [], rating = null,
     type = null, episode = null) {
 
-    let card = new Card(title, id, picture, note, rows, rating,
-      type, episode)
+    let card = new Card(title, id, picture, note, rows, rating, type, episode)
 
     return card.generateCard()
   }
