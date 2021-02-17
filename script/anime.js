@@ -1,7 +1,7 @@
 let id = 12;
 let allGenres = "";
 let modal = document.querySelector(".modal");
- 
+let genres;
 
 /*
 document.querySelector('.anime').addEventListener('click', (el) => {
@@ -54,23 +54,19 @@ function preparAnime(id){
     }); 
 }
 function showAnime(animeArray){
-    for (i = 0; i < 1; i++) {
-        document.querySelector('.main').appendChild(Card.createCard());
-        let imageDiv = document.querySelector('#image_url');
-        let image = document.createElement('img');
-        image.setAttribute("src", `${animeArray[i].image_url}`)
-        document.querySelector('#title').innerHTML = animeArray[i].title;
-        document.querySelector('#type').innerHTML = animeArray[i].type;
-        let genres = animeArray[i].genres;
+    for (i = 0; i < 10; i++) {
+        genres = "";
+        allGenres="";
+        genres = animeArray[i].genres;
         genres.forEach(element => {
             allGenres += element.name+", ";
         });
-        document.querySelector('#genres').innerHTML = allGenres;
-        document.querySelector('#episodes').innerHTML = animeArray[i].episodes+"ep";
-        document.querySelector('.high').innerHTML = animeArray[i].score;
-        document.querySelector('#synopsis').innerHTML = tronque_description(animeArray[i].synopsis, 65);
+        let description = tronque_description(animeArray[i].synopsis, 65);
+        let cardAnime = new Card(animeArray[i].title, animeArray[i].id, animeArray[i].image_url, animeArray[i].score, [['Genre', allGenres, false],['Description', description, false]], false, animeArray[i].type,  animeArray[i].episodes)
+        document.querySelector('.main').appendChild(cardAnime.generateCard())
+
         
 
-        imageDiv.appendChild(image);
+
     }
 }

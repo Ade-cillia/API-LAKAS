@@ -65,7 +65,7 @@ class Card {
 
   addIllustration(link) {
     let illustration = document.createElement('img')
-    illustration.src = 'link';
+    illustration.src = this.picture;
     illustration.classList.add('illustration')
     this.cardIllustration = illustration;
   }
