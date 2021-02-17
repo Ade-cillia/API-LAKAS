@@ -11,4 +11,9 @@ aside {
   border-right: 4px solid $main;
 
   position: sticky;
+
+  @media (max-width:100px) {
+    width: 800px;
+    min-width: unset;
+  }
 }
