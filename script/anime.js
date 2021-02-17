@@ -26,18 +26,29 @@ document.querySelector('.aside-menu').addEventListener('click', (el) => {
         
 
         if(document.querySelector(`#${el.dataset.genre}`) === null){
-            showAnime();
+            showAnime(el.dataset.genre);
         }else{
             document.querySelector(`#${el.dataset.genre}`).classList.remove('none') 
         }
     }
 });
 
-function showAnime(){
+function showAnime(genreID){
     fetch(`https://api.jikan.moe/v3/anime/${id}`).then((response) => {
         return response.json();
     }).then((anime) =>{
         console.log(anime);
+        let animeDiv = document.querySelector('.anime');
+        let allAnime_block = document.createElement("div").setAttribute("id", genreID).setAttribute("class", "allAnime-block none");
+        let anime_block = document.createElement("div").setAttribute("class", "anime-block");
+        let animeLeftPart = document.createElement("div").setAttribute("class", "animeLeftPart");
+        let image_url = document.createElement("div").setAttribute("id", "image_url");
+        let divTitle = document.createElement("div").setAttribute("class", "divTitle");
+        let h1Title =  document.createElement("h1").setAttribute("class", "h1Title")
+
+        let animeRightPart
+
+
         let imageDiv = document.querySelector('#image_url');
         let image = document.createElement('img');
         image.setAttribute("src", `${anime.image_url}`)
@@ -52,6 +63,15 @@ function showAnime(){
         
         
         document.querySelector('#synopsis').innerHTML = tronque_description(anime.synopsis, 65);
+
+        animeDiv.appendChild(allAnime_block);
+        allAnime_block.appendChild(anime_block);
+        anime_block.appendChild(animeLeftPart);
+        animeLeftPart.appendChild(image_url);
+        image_url.appendChild(divTitle);
+        divTitle.appendChild(h1Title);
+
+
         imageDiv.appendChild(image);
         
     }); 
