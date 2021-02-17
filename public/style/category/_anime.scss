@@ -3,14 +3,11 @@
     height: 100%;
 
 }
-.anime{
-    border: 2px solid black;
-}
 .anime-block{
     margin-left: 5%;
     width: 30%;
     height: 20%;
-    border: 2px solid black;
+    border: 2px plum solid;
     div{
         div{
             display: flex;
@@ -20,9 +17,13 @@
     .animeLeftPart{
         width: 50%;
         background: rebeccapurple;
+        
     }
     h1{
-        font-size: 10%;
+        font-size: 0.9vw;
+    }
+    img{
+      width: 100%;
     }
 }
 
