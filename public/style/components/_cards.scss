@@ -9,15 +9,48 @@
 
 
   .illustration {
-    box-sizing: content-box;
-    border-radius: 10px 0 0 10px;
-    
-  }
-  .blackOpacity{
-    display: absolute;
-    top: 0%;
-    left: 0%;
-    height: 100%;
+
+    position: relative;
+    border-radius: 10px 0 10px 0;
+
+    .card-modal {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0);
+      cursor: pointer;
+      border-radius: 10px 0 10px 0;
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      transition: all 0.2s ease-in-out;
+
+      i {
+        font-size: 4em;
+        color: white;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+
+    img {
+      box-sizing: content-box;
+      border-radius: 10px 0 0 10px;
+
+    }
+
+    &:hover {
+
+      .card-modal {
+        background: rgba(0, 0, 0, 0.7);
+      }
+      i {
+        opacity: 1;
+      }
+
+    }
   }
 
   p, h2, h3 {
@@ -129,8 +162,13 @@
     flex-direction: column;
 
     .illustration {
-      box-sizing: content-box;
-      border-radius: 10px 10px 0 0;
+      .card-modal {
+        border-radius: 10px 10px 0 0;
+      }
+      img {
+        box-sizing: content-box;
+        border-radius: 10px 10px 0 0;
+      }
     }
   }
 

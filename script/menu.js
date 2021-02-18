@@ -2,6 +2,12 @@ let icon = document.getElementById('burger-menu')
 let menu = document.querySelector('aside')
 let sticky = menu.offsetTop;
 
+function closeMenu() {
+  icon.classList.toggle('fa-bars');
+  icon.classList.toggle('fa-times-circle');
+  menu.classList.toggle('aside-visible');
+}
+
 icon.addEventListener("click", function() {
   icon.classList.toggle('fa-bars');
   icon.classList.toggle('fa-times-circle');

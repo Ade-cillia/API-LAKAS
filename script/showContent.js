@@ -34,7 +34,7 @@ class Card {
   cardFooter = null;
 
   constructor(title, id, picture = null, note = null, rows = [], rating = null,
-              type = null, episode = null) {
+              type = null, episode = null, trailer = false) {
 
 
     this.title = title;
@@ -45,6 +45,7 @@ class Card {
     this.type = type;
     this.rating = rating;
     this.episode = episode;
+    this.trailer = trailer;
 
     if (picture) {
       this.addIllustration(picture)
@@ -64,11 +65,27 @@ class Card {
   }
 
   addIllustration(link) {
+    let leftDiv = document.createElement('div')
     let illustration = document.createElement('img')
     illustration.src = link;
-    illustration.classList.add('illustration','trailer')
-    illustration.dataset.trailer = this.id;
-    this.cardIllustration = illustration;
+    leftDiv.classList.add('illustration')
+
+
+    if (this.trailer) {
+      let modal = document.createElement('div')
+      modal.classList.add('card-modal')
+      let icon = document.createElement('i')
+      icon.classList.add('far', 'fa-play-circle')
+
+      modal.appendChild(icon)
+
+      leftDiv.appendChild(modal)
+    }
+
+
+    leftDiv.appendChild(illustration)
+    this.cardIllustration = leftDiv
+
   }
 
   addheader(title, note = null) {
@@ -188,9 +205,9 @@ class Card {
   }
 
   static create(title, id, picture = null, note = null, rows = [], rating = null,
-    type = null, episode = null) {
+    type = null, episode = null, trailer = false) {
 
-    let card = new Card(title, id, picture, note, rows, rating, type, episode)
+    let card = new Card(title, id, picture, note, rows, rating, type, episode, trailer)
 
     return card.generateCard()
   }
@@ -198,8 +215,8 @@ class Card {
 }
 
 
-let test = new Card('Mon anime', 12, null, 2, [['Genre', 'les genres de mon anime', false],['Description', 'lorem ipsum lorem lorem ipsum', false]], true, 'TV', 22)
+let test = new Card('Mon anime', 12, null, 2, [['Genre', 'les genres de mon anime', false],['Description', 'lorem ipsum lorem lorem ipsum', false]], true, 'TV', 22, true)
 // document.querySelector('.main').appendChild(test.generateCard())
 
-let static = Card.create('Mon anime', 12, null, 2, [['Genre', 'les genres de mon anime', false],['Description', 'lorem ipsum lorem lorem ipsum', false]], true, 'TV', 22)
+let static = Card.create('Mon anime', 12, null, 2, [['Genre', 'les genres de mon anime', false],['Description', 'lorem ipsum lorem lorem ipsum', false]], true, 'TV', 22, true)
 // document.querySelector('.main').appendChild(static)
