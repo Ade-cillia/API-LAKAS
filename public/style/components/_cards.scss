@@ -79,16 +79,11 @@
     .row {
       margin-top: 20px;
 
-      .long-list {
-        max-height: 50px;
-        overflow-y: auto;
-      }
-
       p {
         margin-top: 5px;
       }
     }
-
+    
     footer {
       display: flex;
       justify-content: space-between;
