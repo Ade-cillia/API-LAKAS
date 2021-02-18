@@ -18,16 +18,27 @@ document.querySelector('.website-main').addEventListener('click', (el) => {
     if(el.dataset.video){
         document.querySelector("#modal").remove();
     }
+    if(el.dataset.genre){
+        document.querySelector('.page-title').innerHTML = '';
+        document.querySelector('.main').innerHTML = '';
+        preparAnime(el.dataset.genre);
+        placeTitle(el);;
+    }
+    
     if(el.dataset.topmanga){
         document.querySelector('.page-title').innerHTML = '';
         document.querySelector('.main').innerHTML = '';
         preparManga();
+        placeTitle(el);
     }
+
     if (el.dataset.idperso) {
         document.querySelector('.page-title').innerHTML = '';     
         document.querySelector('.main').innerHTML = '';
         menuChar(el.dataset.idperso);
+        placeTitle(el);
     }
+
     if(el.dataset.producer){
         document.querySelector('.page-title').innerHTML = '';
         document.querySelector('.main').innerHTML = '';
@@ -39,3 +50,11 @@ document.querySelector('.website-main').addEventListener('click', (el) => {
         document.querySelector('.main').appendChild(prodAnime.generateCard());
     }
 });
+
+function placeTitle(el){
+    let title = document.createElement('h1')
+    let spanTitle =  document.createElement('span')
+    spanTitle.innerHTML = el.innerHTML;
+    document.querySelector('.page-title').appendChild(title);
+    title.appendChild(spanTitle);
+}

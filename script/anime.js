@@ -5,15 +5,6 @@ let url;
 let main = document.querySelector(".main");
 
 
-document.querySelector('.aside-menu').addEventListener('click', (el) => {
-    el = el.target;
-    if(el.dataset.genre){
-        document.querySelector('.main').innerHTML = '';
-        preparAnime(el.dataset.genre);
-     
-    }
-});
-
 function preparAnime(id){
     fetch(`https://api.jikan.moe/v3/genre/anime/${id}/1`).then((response) => {
         return response.json();
@@ -39,6 +30,7 @@ function preparAnime(id){
     }); 
 }
 function showAnime(animeArray){
+    
     for (i = 0; i < 10; i++) {
         genres = "";
         allGenres="";
@@ -47,7 +39,7 @@ function showAnime(animeArray){
             allGenres += element.name+", ";
         });
         let description = tronque_description(animeArray[i].synopsis, 100);
-        let cardAnime = new Card(animeArray[i].title, animeArray[i].id, animeArray[i].image_url, animeArray[i].score, [['Genre', allGenres, false],['Description', description, false]], animeArray[i].r18, animeArray[i].type,  animeArray[i].episodes, true, 1)
+        let cardAnime = new Card(animeArray[i].title, animeArray[i].id, animeArray[i].image_url, animeArray[i].score, [['Genre', allGenres, false],['Description', description, false]], animeArray[i].r18, animeArray[i].type,  animeArray[i].episodes+"ep", true, 1)
         document.querySelector('.main').appendChild(cardAnime.generateCard())
     }
 }
