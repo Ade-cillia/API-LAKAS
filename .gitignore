@@ -11,9 +11,6 @@
 *.sln.docstates
 .idea/
 
-public/style/main.css
-public/style/main.css.map
-
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 

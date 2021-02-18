@@ -1,0 +1,14 @@
+@import "../helpers/variables";
+
+.banner {
+  width: 100vw;
+  border-bottom: 2px solid $main;
+
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    min-width: 800px;
+  }
+}

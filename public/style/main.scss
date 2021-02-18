@@ -1,10 +1,7 @@
 @import "helpers/variables";
-@import "helpers/functions";
-@import "helpers/mixins";
 
 @import "base/normalize";
 @import "base/base";
-@import "base/typography";
 
 @import "layout/main";
 @import "layout/side";
@@ -12,6 +9,9 @@
 @import "layout/header";
 
 @import "components/search";
+@import "components/burger";
+@import "components/cards";
+@import "components/modal";
 
 @import "category/anime";
 @import "category/manga";

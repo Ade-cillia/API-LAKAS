@@ -1,3 +1,15 @@
-.test {
-    color: red;
+@import "../helpers/variables";
+
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background: #38393b}
+::-webkit-scrollbar-thumb{background:$main;border-radius:10px}
+::-webkit-scrollbar-thumb:hover{background:$alternate}
+
+body {
+    background: $bg-alternate;
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none !important;
 }
