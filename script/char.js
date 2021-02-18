@@ -1,6 +1,3 @@
-let characters;
-let list = document.querySelector('#characters');
-let infos = document.querySelector('#infos');
 let allAnime;
 
 function menuChar(id){

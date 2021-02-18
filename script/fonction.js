@@ -11,7 +11,6 @@ function tronque_description(description, lg_max) {
 
 document.querySelector('.website-main').addEventListener('click', (el) => {
     el = el.target;
-    console.log(el)
     if(el.dataset.trailer){
         getUrlTrailer(el.dataset.trailer);
         modal.classList.remove('none');
@@ -24,11 +23,23 @@ document.querySelector('.website-main').addEventListener('click', (el) => {
         });
     }
     if(el.dataset.topmanga){
-        document.querySelector('.main').innerHTML = ''
+        document.querySelector('.page-title').innerHTML = '';
+        document.querySelector('.main').innerHTML = '';
         preparManga();
     }
-    if (el.dataset.idperso) {     
-        document.querySelector('.main').innerHTML = ''
+    if (el.dataset.idperso) {
+        document.querySelector('.page-title').innerHTML = '';     
+        document.querySelector('.main').innerHTML = '';
         menuChar(el.dataset.idperso);
+    }
+    if(el.dataset.producer){
+        document.querySelector('.page-title').innerHTML = '';
+        document.querySelector('.main').innerHTML = '';
+        createProd(1);
+        console.log('arrayProducers');
+    }
+    if(el.dataset.producer_anime){
+        let prodAnime = new Card('Mon anime', 12, null, 2, [['Genre', 'les genres de mon anime', false],['Description', 'lorem ipsum lorem lorem ipsum', false]], true, 'TV', 22)
+        document.querySelector('.main').appendChild(prodAnime.generateCard());
     }
 });

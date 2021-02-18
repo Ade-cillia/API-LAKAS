@@ -49,19 +49,6 @@ function createProd(id){
       });
 }
 
-document.querySelector('.aside-menu').addEventListener('click', (el) => {
-    el = el.target;
-    if(el.dataset.producer){
-        document.querySelector('.main').innerHTML = '';
-        createProd(1);
-        console.log('arrayProducers');
 
 
-    }
-    if(el.dataset.producer_anime){
-        let prodAnime = new Card('Mon anime', 12, null, 2, [['Genre', 'les genres de mon anime', false],['Description', 'lorem ipsum lorem lorem ipsum', false]], true, 'TV', 22)
-        document.querySelector('.main').appendChild(prodAnime.generateCard());
-    }
-});
-
-// createProd(1);
+//createProd(1);
