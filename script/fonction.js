@@ -1,3 +1,5 @@
+
+
 function tronque_description(description, lg_max) {
     if (description.length > lg_max){
         description = description.substr(0, lg_max);
@@ -10,6 +12,7 @@ function tronque_description(description, lg_max) {
 }
 
 document.querySelector('.website-main').addEventListener('click', (el) => {
+    
     el = el.target;
     //console.log(el)
     if(el.dataset.trailer){
@@ -43,7 +46,6 @@ document.querySelector('.website-main').addEventListener('click', (el) => {
         document.querySelector('.page-title').innerHTML = '';
         document.querySelector('.main').innerHTML = '';
         createProd(el.dataset.producer);
-        console.log('arrayProducers');
     }
     if(el.dataset.producer_anime){
         let prodAnime = new Card('Mon anime', 12, null, 2, [['Genre', 'les genres de mon anime', false],['Description', 'lorem ipsum lorem lorem ipsum', false]], true, 'TV', 22)
