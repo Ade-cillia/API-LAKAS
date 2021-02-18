@@ -1,41 +1,20 @@
 let characters;
 let list = document.querySelector('#characters');
 let infos = document.querySelector('#infos');
-let allAnime = "";
+let allAnime;
 
-function menu(id){
-    fetch(`https://api.jikan.moe/v3/character/${id}`)
-    .then((response) => {
+function menuChar(id){
+    fetch(`https://api.jikan.moe/v3/character/${id}`).then((response) => {
         return response.json();
-    })
-
-    .then((perso) => {
-        characters = perso;
-        let imagePerso = document.querySelector('#url');
-        let image = document.createElement('img');
-        image.setAttribute("src", `${perso.image_url}`);
-        document.querySelector('#name').innerHTML = perso.name;
-        document.querySelector('#about').innerHTML = perso.about;
-        imagePerso.appendChild(image);
-        document.querySelector('#about').innerHTML = tronque_description(perso.about, 666);
-        let world= perso.animeography;
-        console.log(world);
+    }).then((perso) => {
+        description = tronque_description(perso.about, 300);
+        let world = perso.animeography;
+        allAnime = "";
         world.forEach(element => {
-            console.log(element)
             allAnime += element.name+", ";
         });
-        document.querySelector('#book').innerHTML = allAnime;
+        let charCard = new Card(perso.name, id, perso.image_url, null, [['Vus dans les animes/mangas:', allAnime, false],['Description :', description, false]], null, null, null)
+        document.querySelector('.main').appendChild(charCard.generateCard())
     });
 }
-document.querySelector('.aside-menu').addEventListener('click', (el) => {
-    el = el.target;
-    if (el.dataset.idperso) {
 
-        if(document.querySelector(`${el.dataset.idperso}`)){
-            document.querySelector('.main').appendChild(Card.createCard());
-            menu(el.dataset.idperso);
-        }else{
-            document.querySelector(`#${el.dataset.idperso}`).classList.remove('none');
-        }
-    }
-});
