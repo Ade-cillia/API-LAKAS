@@ -11,6 +11,13 @@
   .illustration {
     box-sizing: content-box;
     border-radius: 10px 0 0 10px;
+    
+  }
+  .blackOpacity{
+    display: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
   }
 
   p, h2, h3 {

@@ -1,12 +1,13 @@
 let id = 12;
 let allGenres = "";
 let modal = document.querySelector(".modal");
- 
+let genres;
 
-/*
-document.querySelector('.anime').addEventListener('click', (el) => {
+
+document.querySelector('.main').addEventListener('click', (el) => {
     el = el.target;
     if(el.dataset.trailer){
+        console.log('dqsd')
         modal.classList.remove('none');
     }
     if(el.dataset.video){
@@ -17,11 +18,11 @@ document.querySelector('.anime').addEventListener('click', (el) => {
         });
     }
 });
-*/
+
 document.querySelector('.aside-menu').addEventListener('click', (el) => {
     el = el.target;
     if(el.dataset.genre){
-        console.log('nnan');
+        document.querySelector('.main').innerHTML = ''
         preparAnime(el.dataset.genre);
      
     }
@@ -32,7 +33,6 @@ function preparAnime(id){
         return response.json();
     }).then((category) =>{
         anime = category.anime; 
-        console.log(anime);
         var animeArray = [];
         for (i = 0; i < 10; i++) {
             animeArray.push(
@@ -54,23 +54,26 @@ function preparAnime(id){
     }); 
 }
 function showAnime(animeArray){
-    for (i = 0; i < 1; i++) {
-        document.querySelector('.main').appendChild(Card.createCard());
-        let imageDiv = document.querySelector('#image_url');
-        let image = document.createElement('img');
-        image.setAttribute("src", `${animeArray[i].image_url}`)
-        document.querySelector('#title').innerHTML = animeArray[i].title;
-        document.querySelector('#type').innerHTML = animeArray[i].type;
-        let genres = animeArray[i].genres;
+    for (i = 0; i < 10; i++) {
+        genres = "";
+        allGenres="";
+        genres = animeArray[i].genres;
         genres.forEach(element => {
             allGenres += element.name+", ";
         });
-        document.querySelector('#genres').innerHTML = allGenres;
-        document.querySelector('#episodes').innerHTML = animeArray[i].episodes+"ep";
-        document.querySelector('.high').innerHTML = animeArray[i].score;
-        document.querySelector('#synopsis').innerHTML = tronque_description(animeArray[i].synopsis, 65);
+        let description = tronque_description(animeArray[i].synopsis, 100);
+        let cardAnime = new Card(animeArray[i].title, animeArray[i].id, animeArray[i].image_url, animeArray[i].score, [['Genre', allGenres, false],['Description', description, false]], animeArray[i].r18, animeArray[i].type,  animeArray[i].episodes)
+        document.querySelector('.main').appendChild(cardAnime.generateCard())
+
         
 
-        imageDiv.appendChild(image);
+
     }
+}
+function getUrlTrailer(id){
+    fetch(`https://api.jikan.moe/v3/anime/${id}`).then((response) => {
+        return response.json();
+    }).then((data) =>{
+        
+    }); 
 }
