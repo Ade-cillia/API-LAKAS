@@ -9,6 +9,7 @@
 
     <script src="./script/anime.js" defer></script>
     <script src="./script/fonction.js" defer></script>
+    <script src="./script/Producer.js" defer></script>
     <link rel="stylesheet" href="public/style/main.css">
 
 <!--    <script src="./script/animejs.js" defer></script>-->
@@ -81,6 +82,7 @@
         </nav>
       </aside>
       <div class="main">
+          
         <!--
         <article id="genre1" class="card">
           <div class="illustration" id="image_url"></div> -->
@@ -130,6 +132,72 @@
         <div id="manga">
       </div>
     -->
+        <article id="producers" class="card">
+          <div class="content">
+            <div>
+              <header>
+                <div class="title">
+                  <h2 id="name">Nom</h2>
+                </div>
+                <div class="type">
+                  <h3 id="type">type</h3>
+                </div>
+              </header>
+              <div class="row">
+                <h3 class="label">Créations</h3>  
+              </div>
+            </div>
+            <footer>
+              <p class="url"></p>
+            </footer>
+          </div>
+        </article>
+        <article class="card">
+          <img class="illustration" src="public/content/example.jpg" alt="">
+          <div class="content">
+            <div>
+              <header>
+                <div class="title">
+                  <h2>Titre</h2>
+                  <p class="upcoming">Etat</p>
+                </div>
+                <div class="note">
+                  <span class="high">8</span>
+                  <span class="note-max">/10</span>
+                </div>
+              </header>
+
+              <div class="row">
+                <h3 class="label">Genre</h3>
+                <p id="genres" class="text-content">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </p>
+              </div>
+              <div class="row">
+                <h3 class="label">Synopsis</h3>
+                <p id="synopsis" class="text-content">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </p>
+              </div>
+              <div class="row">
+                <h3 class="label trailer" data-trailer="1">Synopsis</h3>
+              </div>
+            </div>
+
+            <footer>
+              <p id="type" class="support">TV</p>
+              <p class="rating"><span>Rating</span>17+</p>
+              <p id="episodes" class="number">25ep</p>
+            </footer>
+          </div>
+        </article>
+      
+        <aside class="modal none" data-video="true" >
+          <iframe class="trailerVideo" src="#"  width=50% frameborder="0"  allowfullscreen></iframe> 
+        </aside> 
+        </div>
+        <div id="manga">
+      </div>
     </main>
     <footer>
       <script src="script/manga.js"></script>
