@@ -34,7 +34,7 @@ class Card {
   cardFooter = null;
 
   constructor(title, id, picture = null, note = null, rows = [], rating = null,
-              type = null, episode = null, trailer = false) {
+              type = null, episode = null, trailer = false, contentType = 0) {
 
 
     this.title = title;
@@ -46,6 +46,7 @@ class Card {
     this.rating = rating;
     this.episode = episode;
     this.trailer = trailer;
+    this.contentType = contentType;
 
     if (picture) {
       this.addIllustration(picture)
@@ -145,29 +146,36 @@ class Card {
 
   addFooter(support, rating, episodesNbr) {
     let footer = document.createElement('footer')
-    let supportVar = document.createElement('p')
-    supportVar.classList.add('support')
-    supportVar.innerText = support
 
-    let ratingVar = document.createElement('p')
-    ratingVar.classList.add('rating')
-    if (rating) {
-      ratingVar.innerText = '18+'
-    } else {
-      ratingVar.innerText = 'Tout public'
+    if (rating != null || rating != 'null') {
+      let supportVar = document.createElement('p')
+      supportVar.classList.add('support')
+      supportVar.innerText = support
+      footer.appendChild(supportVar)
     }
 
-    let ratingSpan = document.createElement('span')
-    ratingSpan.innerText = 'rating'
-    ratingVar.prepend(ratingSpan)
+    if (rating != null || rating != 'null') {
+      let ratingVar = document.createElement('p')
+      ratingVar.classList.add('rating')
+      if (rating) {
+        ratingVar.innerText = '18+'
+      } else {
+        ratingVar.innerText = 'Tout public'
+      }
 
-    let numberVar = document.createElement('p')
-    numberVar.classList.add('number')
-    numberVar.innerText = episodesNbr + 'ep'
+      let ratingSpan = document.createElement('span')
+      ratingSpan.innerText = 'rating'
+      ratingVar.prepend(ratingSpan)
+      footer.appendChild(ratingVar)
+    }
 
-    footer.appendChild(supportVar)
-    footer.appendChild(ratingVar)
-    footer.appendChild(numberVar)
+    if (episodesNbr != null || episodesNbr != 'null') {
+      let numberVar = document.createElement('p')
+      numberVar.classList.add('number')
+      numberVar.innerText = episodesNbr
+      footer.appendChild(numberVar)
+    }
+
 
     this.cardFooter = footer;
 
