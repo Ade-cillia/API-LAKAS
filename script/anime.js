@@ -33,7 +33,7 @@ function showAnime(animeArray){
     
     for (i = 0; i < 100; i++) {
         genres = "";
-        allGenres="";
+        allGenres = "";
         genres = animeArray[i].genres;
         genres.forEach(element => {
             allGenres += element.name+", ";
