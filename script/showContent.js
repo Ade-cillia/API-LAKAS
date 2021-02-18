@@ -65,8 +65,8 @@ class Card {
 
   addIllustration(link) {
     let illustration = document.createElement('img')
-    illustration.src = this.picture;
-    illustration.classList.add('illustration')
+    illustration.src = link;
+    illustration.classList.add('illustration','trailer')
     this.cardIllustration = illustration;
   }
 
@@ -165,6 +165,24 @@ class Card {
 
     if (this.cardIllustration != null) {
       article.appendChild(this.cardIllustration)
+      /*
+      let blackOpacity = document.createElement('div')
+      blackOpacity.classList.add('blackOpacity')
+      blackOpacity.classList.add('illustration')
+      console.log(document.querySelector('img').width)
+      let modal = document.createElement('aside')
+      modal.classList.add('modal', 'none')
+      modal.dataset.video = true
+      let iframeModal = document.createElement('iframe')
+      iframeModal.classList.add('trailerVideo')
+      let urlTrailer = getUrlTrailer(id);
+      iframeModal.setAttribute('src', `${urlTrailer}`)
+      iframeModal.setAttribute('frameborder', 0)
+      iframeModal.setAttribute('allowfullscreen', 1)
+      article.appendChild(modal)
+      modal.appendChild(iframeModal)
+      article.appendChild(blackOpacity)
+      */
     } else {
       content.classList.add('large-content')
     }

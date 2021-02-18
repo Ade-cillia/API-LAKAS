@@ -409,6 +409,13 @@ body {
   border-radius: 10px 0 0 10px;
 }
 
+.card .blackOpacity {
+  display: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+}
+
 .card p, .card h2, .card h3 {
   margin: 0;
   padding: 0;
