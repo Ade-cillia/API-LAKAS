@@ -64,4 +64,4 @@ document.querySelector('.aside-menu').addEventListener('click', (el) => {
     }
 });
 
-createProd(1);
+//createProd(1);

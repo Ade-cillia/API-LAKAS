@@ -19,39 +19,40 @@ function preparManga(){
     }).then((manga) => {
 
         manga.results.forEach(mangaElt => {
+            let test = new Card(mangaElt.title, null, mangaElt.image_url, mangaElt.score, [['Synopsis', mangaElt.synopsis, false]], null, mangaElt.type, mangaElt.volumes, false, 1);
+            document.querySelector('.main').appendChild(test.generateCard())
+            //let div = document.createElement("div");
 
-            let div = document.createElement("div");
+            // let title = document.createElement("h1");
+            // title.innerHTML = mangaElt.title;
+            // let score = document.createElement("h2");
+            // score.innerHTML = "Score : " + mangaElt.score;
+            // let header = document.createElement("header");
+            // header.appendChild(title);
+            // header.appendChild(score);
 
-            let title = document.createElement("h1");
-            title.innerHTML = mangaElt.title;
-            let score = document.createElement("h2");
-            score.innerHTML = "Score : " + mangaElt.score;
-            let header = document.createElement("header");
-            header.appendChild(title);
-            header.appendChild(score);
+            // let section = document.createElement("section");
+            // let aside = document.createElement("aside");
+            // let img = document.createElement("img");
+            // img.setAttribute("src", mangaElt.image_url);
+            // aside.appendChild(img);
+            // section.appendChild(aside);
+            // let paragraph = document.createElement("p");
+            // paragraph.innerHTML = mangaElt.synopsis;
+            // section.appendChild(paragraph);
 
-            let section = document.createElement("section");
-            let aside = document.createElement("aside");
-            let img = document.createElement("img");
-            img.setAttribute("src", mangaElt.image_url);
-            aside.appendChild(img);
-            section.appendChild(aside);
-            let paragraph = document.createElement("p");
-            paragraph.innerHTML = mangaElt.synopsis;
-            section.appendChild(paragraph);
+            // let footer = document.createElement("footer");
+            // let url = document.createElement("a");
+            // url.setAttribute("href", mangaElt.url);
+            // url.innerHTML = mangaElt.url;
 
-            let footer = document.createElement("footer");
-            let url = document.createElement("a");
-            url.setAttribute("href", mangaElt.url);
-            url.innerHTML = mangaElt.url;
+            // footer.appendChild(url);
 
-            footer.appendChild(url);
-
-            div.appendChild(header);
-            div.appendChild(section);
-            div.appendChild(footer);
+            // div.appendChild(header);
+            // div.appendChild(section);
+            // div.appendChild(footer);
             
-            mangaDiv.appendChild(div);
+            // mangaDiv.appendChild(div);
         });
     })
 }
