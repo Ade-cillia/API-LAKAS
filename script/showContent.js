@@ -33,8 +33,10 @@ class Card {
   cardRows = [];
   cardFooter = null;
 
-  constructor(title, id, picture = null, note = null, rows = [], rating = null,
-              type = null, episode = null, trailer = false, contentType = 0) {
+  constructor(title, id, picture = null, note = null,
+              rows = [], rating = null, type = null,
+              episode = null, trailer = false,
+              contentType = 0) {
 
 
     this.title = title;
@@ -55,7 +57,7 @@ class Card {
     this.addheader(title, note)
 
     for (let row of rows) {
-      this.addRow(row[0], row[1])
+      this.addRow(row[0], row[1], row[2])
     }
 
     this.addFooter(type, rating, episode)
@@ -132,13 +134,25 @@ class Card {
     title.classList.add('label')
     title.innerText = label
 
-    let p = document.createElement('p')
-    p.classList.add('text-content')
-    if (long) {p.classList.add('long-list')}
-    p.innerText = content
 
-    row.appendChild(title)
-    row.appendChild(p)
+    if (long) {
+      let p = document.createElement('ul')
+      p.classList.add('text-content')
+      p.classList.add('long-list')
+
+      p.innerHTML = content
+      row.appendChild(title)
+      row.appendChild(p)
+    } else {
+      let p = document.createElement('p')
+      p.classList.add('text-content')
+      p.innerText = content
+      row.appendChild(title)
+      row.appendChild(p)
+    }
+
+
+
 
     this.cardRows.push(row)
 

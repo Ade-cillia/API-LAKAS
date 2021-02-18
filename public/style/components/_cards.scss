@@ -6,6 +6,7 @@
   color: $text;
   border-radius: 10px;
   display: flex;
+  min-width: 575px;
 
 
   .illustration {
@@ -70,7 +71,7 @@
 
   .content {
     padding: 15px;
-    width: 325px;
+    width: 350px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;;
@@ -104,6 +105,7 @@
       .note {
         font-weight: 600;
         font-size: 1.2em;
+        margin-left: 15px;
 
         .high {
           color: $green-500;
