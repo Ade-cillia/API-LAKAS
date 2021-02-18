@@ -62,7 +62,7 @@ function showAnime(animeArray){
             allGenres += element.name+", ";
         });
         let description = tronque_description(animeArray[i].synopsis, 100);
-        let cardAnime = new Card(animeArray[i].title, animeArray[i].id, animeArray[i].image_url, animeArray[i].score, [['Genre', allGenres, false],['Description', description, false]], animeArray[i].r18, animeArray[i].type,  animeArray[i].episodes)
+        let cardAnime = new Card(animeArray[i].title, animeArray[i].id, animeArray[i].image_url, animeArray[i].score, [['Genre', allGenres, false],['Description', description, false]], animeArray[i].r18, animeArray[i].type,  animeArray[i].episodes, true)
         document.querySelector('.main').appendChild(cardAnime.generateCard())
 
         

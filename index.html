@@ -43,11 +43,11 @@
               <div class="box">
                 <div class="face nav-label">Animés</div>
                 <ul class="face subnav">
-                  <li class="subnav-item" data-genre="14">Horreur</li>
-                  <li class="subnav-item" data-genre="2">Aventure</li>
-                  <li class="subnav-item" data-genre="1">Action</li>
-                  <li class="subnav-item" data-genre="12">Le H word</li>
-                  <li class="subnav-item" data-genre="22">Romance</li>
+                  <li class="subnav-item" data-genre="14" onclick="closeMenu()">Horreur</li>
+                  <li class="subnav-item" data-genre="2" onclick="closeMenu()">Aventure</li>
+                  <li class="subnav-item" data-genre="1" onclick="closeMenu()">Action</li>
+                  <li class="subnav-item" data-genre="12" onclick="closeMenu()">Le H word</li>
+                  <li class="subnav-item" data-genre="22" onclick="closeMenu()">Romance</li>
                 </ul>
               </div>
             </li>
@@ -72,19 +72,21 @@
               <div class="box">
                 <div class="face nav-label">Producteurs</div>
                 <ul class="face subnav">
-                  <li class="subnav-item">Item 1</li>
-                  <li class="subnav-item">Item 2</li>
+                  <li class="subnav-item" data-producer="1">Studio Pierrot</li>
                 </ul>
               </div>
             </li>
           </ul>
         </nav>
       </aside>
-      <div class="main">
-        <!--
-        <article id="genre1" class="card">
-          <div class="illustration" id="image_url"></div> -->
-<!--          <img  src="public/content/example.jpg" alt="">--><!--
+      <div class="main-view">
+        <div class="page-title">
+        </div>
+        <div class="main">
+          <!--
+          <article id="genre1" class="card">
+            <div class="illustration" id="image_url"></div> -->
+          <!--          <img  src="public/content/example.jpg" alt="">--><!--
           <div class="content large-content">
             <div>
               <header>
@@ -122,14 +124,16 @@
             </footer>
           </div>
         </article>
-      
+
         <aside class="modal none" data-video="true" >
-          <iframe class="trailerVideo" src="#"  width=50% frameborder="0"  allowfullscreen></iframe> 
-        </aside> 
+          <iframe class="trailerVideo" src="#"  width=50% frameborder="0"  allowfullscreen></iframe>
+        </aside>
         </div>
         <div id="manga">
       </div>
     -->
+        </div>
+      </div>
     </main>
     <footer>
       <script src="script/manga.js"></script>
@@ -137,6 +141,7 @@
     <script src="script/menu.js"></script>
 <!--    <script src="script/modal.js"></script>-->
     <script src="script/search.js"></script>
+    <script src="script/Producer.js"></script>
     <script src="script/showContent.js"></script>
   </body>
 </html>
