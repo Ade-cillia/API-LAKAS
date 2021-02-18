@@ -217,6 +217,7 @@ body {
   height: 100vh;
   background: #191c1d;
   width: 400px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   flex-direction: column;
   border-right: 4px solid #c11861;
   position: absolute;
@@ -228,6 +229,7 @@ body {
 }
 @media (max-width: 1000px) {
   .aside-menu {
+    margin: 130px;
     display: none;
     width: 100vw;
     min-width: unset;
@@ -302,6 +304,7 @@ body {
 }
 
 .banner {
+  z-index: 30;
   width: 100vw;
   border-bottom: 2px solid #c11861;
   display: flex;
@@ -309,7 +312,12 @@ body {
 }
 .banner img {
   width: 100%;
-  min-width: 800px;
+  min-width: 750px;
+}
+@media (max-width: 1000px) {
+  .banner {
+    position: fixed;
+  }
 }
 
 .search {
@@ -322,6 +330,7 @@ body {
   padding: 0 10px;
   border-radius: 100px;
   border: 1px solid white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .search div input, .search div select {
   padding: 5px 0;
@@ -342,10 +351,10 @@ body {
 }
 
 #burger-menu {
-  z-index: 25;
+  z-index: 31;
   color: #c11861;
   font-size: 3em;
-  position: absolute;
+  position: fixed;
   top: 25px;
   right: 25px;
   cursor: pointer;
@@ -363,6 +372,7 @@ body {
   border-radius: 10px;
   display: flex;
   min-width: 575px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 .card .illustration {
   position: relative;

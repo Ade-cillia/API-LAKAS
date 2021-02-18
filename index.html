@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>MangaSlayerAvecZ</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -22,9 +22,9 @@
         <iframe width="720" height="405" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
+    <i id="burger-menu" class="far fa-bars"></i>
     <header class="banner">
       <img src="public/content/banner.jpg" alt="">
-      <i id="burger-menu" class="far fa-bars"></i>
     </header>
     <main class="website-main">
       <aside class="aside-menu">
@@ -57,7 +57,7 @@
               <div class="box">
                 <div class="face nav-label">Manga</div>
                 <ul class="face subnav">
-                  <li class="subnav-item" data-topmanga="top10">Top 10</li>
+                  <li class="subnav-item" data-topmanga="top10" onclick="closeMenu()">Top 10</li>
                 </ul>
               </div>
             </li>
@@ -65,13 +65,13 @@
               <div class="box">
                 <div class="face nav-label">Personnages</div>
                 <ul class="face subnav">
-                  <li class="subnav-item" data-idperso="1">Cowboy_Bebop</li>
-                  <li class="subnav-item" data-idperso="20">Naruto</li>
-                  <li class="subnav-item" data-idperso="21">One_Piece</li>
-                  <li class="subnav-item" data-idperso="11757">Sword_Art_Online</li>
-                  <li class="subnav-item" data-idperso="32379">Berserk</li>
-	                <li class="subnav-item" data-idperso="38656">Darwins_Game</li>
-                  <li class="subnav-item" data-idperso="22319">Tokyo_Ghoul</li>
+                  <li class="subnav-item" data-idperso="1" onclick="closeMenu()">Cowboy_Bebop</li>
+                  <li class="subnav-item" data-idperso="20" onclick="closeMenu()">Naruto</li>
+                  <li class="subnav-item" data-idperso="21" onclick="closeMenu()">One_Piece</li>
+                  <li class="subnav-item" data-idperso="11757" onclick="closeMenu()">Sword_Art_Online</li>
+                  <li class="subnav-item" data-idperso="32379" onclick="closeMenu()">Berserk</li>
+	                <li class="subnav-item" data-idperso="38656" onclick="closeMenu()">Darwins_Game</li>
+                  <li class="subnav-item" data-idperso="22319" onclick="closeMenu()">Tokyo_Ghoul</li>
                 </ul>
               </div>
             </li>
@@ -79,11 +79,11 @@
               <div class="box">
                 <div class="face nav-label">Producteurs</div>
                 <ul class="face subnav">
-                  <li class="subnav-item" data-producer="1">Studio Pierrot</li>
-                  <li class="subnav-item" data-producer="2">Kyoto Animation</li>
-                  <li class="subnav-item" data-producer="3">Gonzo</li>
-                  <li class="subnav-item" data-producer="4">Bones</li>
-                  <li class="subnav-item" data-producer="5">Bee Train</li>
+                  <li class="subnav-item" data-producer="1" onclick="closeMenu()">Studio Pierrot</li>
+                  <li class="subnav-item" data-producer="2" onclick="closeMenu()">Kyoto Animation</li>
+                  <li class="subnav-item" data-producer="3" onclick="closeMenu()">Gonzo</li>
+                  <li class="subnav-item" data-producer="4" onclick="closeMenu()">Bones</li>
+                  <li class="subnav-item" data-producer="5" onclick="closeMenu()">Bee Train</li>
                 </ul>
               </div>
             </li>
