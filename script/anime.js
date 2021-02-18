@@ -11,7 +11,7 @@ function preparAnime(id){
     }).then((category) =>{
         anime = category.anime; 
         var animeArray = [];
-        for (i = 0; i < 10; i++) {
+        for (i = 0; i < 100; i++) {
             animeArray.push(
                 {
                     'id' : anime[i].mal_id,
@@ -31,7 +31,7 @@ function preparAnime(id){
 }
 function showAnime(animeArray){
     
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < 100; i++) {
         genres = "";
         allGenres="";
         genres = animeArray[i].genres;
