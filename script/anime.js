@@ -1,15 +1,14 @@
 let id = 12;
 let allGenres = "";
-let modal = document.querySelector(".modal");
 let genres;
 let url;
-
+let main = document.querySelector(".main");
 
 
 document.querySelector('.aside-menu').addEventListener('click', (el) => {
     el = el.target;
     if(el.dataset.genre){
-        document.querySelector('.main').innerHTML = ''
+        document.querySelector('.main').innerHTML = '';
         preparAnime(el.dataset.genre);
      
     }
@@ -36,7 +35,6 @@ function preparAnime(id){
                     'image_url':  anime[i].image_url
                 });
         }
-        console.log(animeArray)
         showAnime(animeArray)
     }); 
 }
@@ -51,32 +49,29 @@ function showAnime(animeArray){
         let description = tronque_description(animeArray[i].synopsis, 100);
         let cardAnime = new Card(animeArray[i].title, animeArray[i].id, animeArray[i].image_url, animeArray[i].score, [['Genre', allGenres, false],['Description', description, false]], animeArray[i].r18, animeArray[i].type,  animeArray[i].episodes, true, 1)
         document.querySelector('.main').appendChild(cardAnime.generateCard())
-
-        
-
-
     }
 }
+
 function getUrlTrailer(id){
     fetch(`https://api.jikan.moe/v3/anime/${id}`).then((response) => {
         return response.json();
     }).then((data) =>{
-        urlTrailer = data.trailer_url
-        if(modal){
-            modal.remove();
-        }
+        urlTrailer = data.trailer_url;
+        console.log(urlTrailer);
         
-        console.log(urlTrailer)
-        let modal = document.createElement('aside')
-        modal.classList.add('modal', 'none')
-        modal.dataset.video = true
-        let iframeModal = document.createElement('iframe')
-        iframeModal.classList.add('trailerVideo')
-        iframeModal.setAttribute('src', `${urlTrailer}`)
-        iframeModal.setAttribute('frameborder', 0)
-        iframeModal.setAttribute('allowfullscreen', 1)
 
-        main.appendChild(modal)
-        modal.appendChild(iframeModal)
+        let modal = document.createElement('aside');
+        modal.setAttribute("id","modal")
+        modal.dataset.video = true;
+        let iframeModal = document.createElement('iframe');
+        iframeModal.classList.add('trailerVideo');
+        iframeModal.setAttribute('src', `${urlTrailer}`);
+        iframeModal.setAttribute('frameborder', 0);
+        iframeModal.setAttribute('autoplay', 1);
+        iframeModal.setAttribute('allow', "autoplay");
+        iframeModal.setAttribute('allowfullscreen', 1);
+
+        main.appendChild(modal);
+        modal.appendChild(iframeModal);
     }); 
 }

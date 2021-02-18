@@ -1,4 +1,4 @@
-.modal {
+#modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,15 +9,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: rgba(0,0,0,0.8);
 
-  .modal-bg {
-    width:100vw;
-    height: 100vh;
+  .trailerVideo {
     position: fixed;
-    background: black;
-    opacity: 0.6;
-  }
-  .modal-content {
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    z-index: 12;
     z-index: 12;
   }
 }
