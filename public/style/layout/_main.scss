@@ -18,16 +18,20 @@
   }
 
   .page-title {
+    margin: 25px;
     h1{
+      margin: 0;
       font-size: 2em;
-      font-weight:600;
+      text-transform: uppercase;
+      color: $main;
+      font-weight:700;
+    }
+    p {
+      margin: 0;
+      text-transform: capitalize;
+      font-weight: 600;
       color: $text;
-
-      span {
-        text-transform: uppercase;
-        color: $main;
-        font-weight:700;
-      }
+      font-size: 1.8em;
     }
   }
 }

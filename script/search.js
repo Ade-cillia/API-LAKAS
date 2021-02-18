@@ -27,30 +27,26 @@ function search() {
   fetch(query).then((response) => {
     return response.json();
   }).then((data) => {
-    let search = document.createElement('h1')
+    let search = document.createElement('p')
+    let searchTitle = document.createElement('h1')
+    searchTitle.innerText = "Recherche: "
     if (searchType.selectedIndex === 0) {
-      search.innerHTML = '<span>Recherche :</span><br/>Animé: ' + searchQuery.value
+      search.innerHTML = 'Animé: ' + searchQuery.value
       for (let result of data.results) {
         document.querySelector('.main').appendChild(
           Card.create(result.title, null, result.image_url, result.score, [['Synopsis', tronque_description(result.synopsis, 100), false]], result.rated, result.type, result.episodes, false, 0)
         )
       }
     } else if (searchType.selectedIndex === 1) {
-      search.innerHTML = '<span>Recherche :</span><br/>Animé: Manga: ' + searchQuery.value
+      search.innerHTML = 'Manga: ' + searchQuery.value
       for (let result of data.results) {
         document.querySelector('.main').appendChild(
           Card.create(result.title, null, result.image_url, result.score, [['Synopsis', tronque_description(result.synopsis, 100), false]], result.rated, result.type, result.volumes, false, 1)
         )
       }
     } else {
-      search.innerHTML = '<span>Recherche :</span><br/>Animé: Personnage: ' + searchQuery.value
+      search.innerHTML = 'Personnage: ' + searchQuery.value
       for (let result of data.results) {
-        // let animeList = ''
-        // for (let animeItem of result.anime) {
-        //   let li = document.createElement('li')
-        //   animeList += '<li>' + animeItem.name + '</li>'
-        // }
-        // animeList = '<ul>' + animeList + '</ul>'
         let animeList = ''
         for (let animeItem of result.anime) {
           animeList += '<li>' + animeItem.name + '</li>'
@@ -64,6 +60,7 @@ function search() {
         )
       }
     }
+    document.querySelector('.page-title').appendChild(searchTitle)
     document.querySelector('.page-title').appendChild(search)
 
     console.log(data.results);
