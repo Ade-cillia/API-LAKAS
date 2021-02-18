@@ -162,7 +162,7 @@ class Card {
   addFooter(support, rating, episodesNbr) {
     let footer = document.createElement('footer')
 
-    if (rating != null || rating != 'null') {
+    if (support != null || support != 'null') {
       let supportVar = document.createElement('p')
       supportVar.classList.add('support')
       supportVar.innerText = support
