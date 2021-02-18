@@ -3,15 +3,6 @@
 let mangaDiv = document.querySelector(".main");
 
 
-document.querySelector('.aside-menu').addEventListener('click', (el) => {
-    el = el.target;
-    if(el.dataset.topmanga){
-        console.log("fdsfds")
-        document.querySelector('.main').innerHTML = ''
-        preparManga();
-     
-    }
-});
 
 function preparManga(){
     fetch("https://api.jikan.moe/v3/search/manga?order_by=score&sort=desc&limit=10").then((response) => {

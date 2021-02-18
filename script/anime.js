@@ -4,21 +4,7 @@ let modal = document.querySelector(".modal");
 let genres;
 let url;
 
-document.querySelector('.website-main').addEventListener('click', (el) => {
-    el = el.target;
-    console.log(el)
-    if(el.dataset.trailer){
-        getUrlTrailer(el.dataset.trailer);
-        modal.classList.remove('none');
-    }
-    if(el.dataset.video){
-        modal.classList.add('none');
-        var iframes = document.querySelectorAll('iframe');
-        Array.prototype.forEach.call(iframes, iframe => { 
-        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'stopVideo' }), '*');
-        });
-    }
-});
+
 
 document.querySelector('.aside-menu').addEventListener('click', (el) => {
     el = el.target;
