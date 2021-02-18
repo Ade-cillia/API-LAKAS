@@ -1,3 +1,5 @@
+@import "../helpers/variables";
+
 .website-main {
   display: flex;
   @media (max-width:1000px) {
@@ -13,6 +15,20 @@
   .main {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .page-title {
+    h1{
+      font-size: 2em;
+      font-weight:600;
+      color: $text;
+
+      span {
+        text-transform: uppercase;
+        color: $main;
+        font-weight:700;
+      }
+    }
   }
 }
 
