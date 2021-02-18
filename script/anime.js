@@ -38,8 +38,8 @@ function showAnime(animeArray){
         genres.forEach(element => {
             allGenres += element.name+", ";
         });
-        //let description = tronque_description(animeArray[i].synopsis, 100);
-        let cardAnime = new Card(animeArray[i].title, animeArray[i].id, animeArray[i].image_url, animeArray[i].score, [['Genre', allGenres, false],['Description', animeArray[i].synopsis, true]], animeArray[i].r18, animeArray[i].type,  animeArray[i].episodes+"ep", true, 1)
+        let description = tronque_description(animeArray[i].synopsis, 100);
+        let cardAnime = new Card(animeArray[i].title, animeArray[i].id, animeArray[i].image_url, animeArray[i].score, [['Genre', allGenres, false],['Description', description, false]], animeArray[i].r18, animeArray[i].type,  animeArray[i].episodes+"ep", true, 1)
         document.querySelector('.main').appendChild(cardAnime.generateCard())
     }
 }
