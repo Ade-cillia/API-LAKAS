@@ -77,7 +77,8 @@ class Card {
       modal.classList.add('card-modal')
       let icon = document.createElement('i')
       icon.classList.add('far', 'fa-play-circle')
-
+      icon.dataset.trailer = this.id
+      modal.dataset.trailer = this.id
       modal.appendChild(icon)
 
       leftDiv.appendChild(modal)
