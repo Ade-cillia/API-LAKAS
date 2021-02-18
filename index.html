@@ -11,7 +11,7 @@
     <script src="./script/fonction.js" defer></script>
     <script src="./script/Producer.js" defer></script>
     <link rel="stylesheet" href="public/style/main.css">
-
+    <script src="./script/char.js" defer></script>
 <!--    <script src="./script/animejs.js" defer></script>-->
   </head>
   <body>
@@ -64,8 +64,13 @@
               <div class="box">
                 <div class="face nav-label">Personnages</div>
                 <ul class="face subnav">
-                  <li class="subnav-item">Item 1</li>
-                  <li class="subnav-item">Item 2</li>
+                  <li class="subnav-item" data-idperso="1">Spike Spiegel</li>
+                  <li class="subnav-item" data-idperso="2">Faye Valentine</li>
+                  <li class="subnav-item" data-idperso="3">Jet Black</li>
+                  <li class="subnav-item" data-idperso="4">Ein</li>
+                  <li class="subnav-item" data-idperso="5">Ichigo Kurosaki</li>
+	                <li class="subnav-item" data-idperso="6">Rukia Kuchiki</li>
+                  <li class="subnav-item" data-idperso="7">Orihime Inoue</li>
                 </ul>
               </div>
             </li>
@@ -82,8 +87,7 @@
         </nav>
       </aside>
       <div class="main">
-          
-        <!--
+         <!--
         <article id="genre1" class="card">
           <div class="illustration" id="image_url"></div> -->
 <!--          <img  src="public/content/example.jpg" alt="">--><!--
@@ -197,6 +201,27 @@
         </aside> 
         </div>
         <div id="manga">
+        </div>
+        <!--
+        <div class="character">
+          <div class="perso">
+            <div id="url">
+            </div>
+            <div>
+              <h3>Name : </h3>
+              <h3 id="name"></h3>
+            </div>
+            <div>
+              <h3>Personnage de : </h3>
+              <h3 id="book"></h3>
+            </div>
+            <div>
+              <h3>Descritpion : </h3>
+              <h4 id="about"></h4>
+            </div>
+          </div>
+          -->
+        </div>
       </div>
     </main>
     <footer>
