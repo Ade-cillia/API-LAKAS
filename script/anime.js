@@ -2,12 +2,13 @@ let id = 12;
 let allGenres = "";
 let modal = document.querySelector(".modal");
 let genres;
+let url;
 
-
-document.querySelector('.main').addEventListener('click', (el) => {
+document.querySelector('.website-main').addEventListener('click', (el) => {
     el = el.target;
+    console.log(el)
     if(el.dataset.trailer){
-        console.log('dqsd')
+        getUrlTrailer(el.dataset.trailer);
         modal.classList.remove('none');
     }
     if(el.dataset.video){
@@ -74,6 +75,22 @@ function getUrlTrailer(id){
     fetch(`https://api.jikan.moe/v3/anime/${id}`).then((response) => {
         return response.json();
     }).then((data) =>{
+        urlTrailer = data.trailer_url
+        if(modal){
+            modal.remove();
+        }
         
+        console.log(urlTrailer)
+        let modal = document.createElement('aside')
+        modal.classList.add('modal', 'none')
+        modal.dataset.video = true
+        let iframeModal = document.createElement('iframe')
+        iframeModal.classList.add('trailerVideo')
+        iframeModal.setAttribute('src', `${urlTrailer}`)
+        iframeModal.setAttribute('frameborder', 0)
+        iframeModal.setAttribute('allowfullscreen', 1)
+
+        main.appendChild(modal)
+        modal.appendChild(iframeModal)
     }); 
 }

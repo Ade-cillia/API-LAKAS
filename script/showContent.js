@@ -183,7 +183,6 @@ class Card {
 
     if (this.cardIllustration != null) {
       article.appendChild(this.cardIllustration)
-
     } else {
       content.classList.add('large-content')
     }
