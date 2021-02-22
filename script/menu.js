@@ -4,9 +4,11 @@ let sticky = document.querySelector('.banner').offsetHeight
 
 
 function closeMenu() {
-  icon.classList.toggle('fa-bars');
-  icon.classList.toggle('fa-times-circle');
-  menu.classList.toggle('aside-visible');
+  if (window.screen.width < 1000 ) {
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times-circle');
+    menu.classList.toggle('aside-visible');
+  }
 }
 
 icon.addEventListener("click", function() {

@@ -1,6 +1,7 @@
 @import "../helpers/variables";
 
 .banner {
+  z-index:30;
   width: 100vw;
   border-bottom: 2px solid $main;
 
@@ -9,6 +10,10 @@
 
   img {
     width: 100%;
-    min-width: 800px;
+    min-width: 750px;
+  }
+
+  @media (max-width: 1000px) {
+    position: fixed;
   }
 }
